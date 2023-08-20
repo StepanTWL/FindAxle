@@ -6,13 +6,13 @@ class find_axle_test(TestCase):
     def test_0001(self): # minus axle
         str1 = '00000'
         str2 = '11100'
-        str3 = '111'
-        str4 = '000'
-        self.assertEqual(find_axle(str1, str2, len(str1), False), 0)
-        self.assertEqual(find_axle(str3, str4, len(str3), False), 1)
+        str3 = '1111'
+        str4 = '0001'
+        self.assertEqual(find_axle(str1, str2, len(str1), False), (0, 0, 0))
+        self.assertEqual(find_axle(str3, str4, len(str3), False), (1, 1, 1))
         find_axle()
-        self.assertEqual(find_axle(str2, str1, len(str1), False), 0)
-        self.assertEqual(find_axle(str4, str3, len(str3), False), -1)
+        self.assertEqual(find_axle(str2, str1, len(str1), False), (0, 0, 0))
+        self.assertEqual(find_axle(str4, str3, len(str3), False), (-1, 1, 1))
         find_axle()
 
     def test_0002(self): # minus axle
